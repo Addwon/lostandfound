@@ -132,7 +132,6 @@ public class MainController {
         //item=itemRepository.findByFound(true);
         model.addAttribute("item",item);
       */
-System.out.println(item.getUser().getUsername());
         model.addAttribute("item",itemRepository.findAll());
         return "useritems";
     }

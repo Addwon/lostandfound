@@ -37,7 +37,41 @@
         </thead>
         <tbody>
 
-        <tr th:each="item : ${item}" >
+        <tr th:each="item : ${item}" th:if="${item.found == false}" >
+
+            <td th:text="${item.itemTitle}"></td>
+
+            <td th:text="${item.itemCatgory}"></td>
+
+            <td th:text="${item.itemDescription}"></td>
+
+            <td th:text="${item.user.firstName}"></td>
+
+            <td th:text="${item.found}"></td>
+
+            <td><div><a th:href="@{/change/{id}(id=${item.id})}">Change</a></div></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <table class="table" title="Items List" >
+        <thead>
+        <tr>
+            <td><b>Found items</b></td>
+        </tr>
+        <tr>
+            <th>Item title</th>
+            <th>Item catgory</th>
+            <th>Item description</th>
+            <th>Reported by</th>
+            <th>Item is found</th>
+            <th>Change status</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="item : ${item}" th:if="${item.isFound()}" >
 
             <td th:text="${item.itemTitle}"></td>
 
