@@ -26,6 +26,8 @@ public class Item {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    private String uname;
+
     public Item() {
     }
 
@@ -35,6 +37,7 @@ public class Item {
         this.itemCatgory = itemCatgory;
         this.user = user;
         this.found=found;
+        this.uname=user.getUsername();
     }
 
     public long getId() {
@@ -83,5 +86,13 @@ public class Item {
 
     public void setFound(boolean found) {
         this.found = found;
+    }
+
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 }

@@ -25,6 +25,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" sec:authorize="hasAuthority('ADMIN')" href="/itemsstatus">Items status</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" sec:authorize="hasAuthority('USER')" href="/useritems">My items</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" sec:authorize="isAnonymous()" href="/registration">Sign up</a>
                 </li>

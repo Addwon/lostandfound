@@ -27,7 +27,7 @@
         </thead>
         <tbody>
 
-        <tr th:each="item : ${item}" >
+        <tr th:each="item : ${item}" th:if="${item.isFound()}">
 
             <td th:text="${item.itemTitle}"></td>
 

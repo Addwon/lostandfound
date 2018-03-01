@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.Collection;
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -79,6 +81,7 @@ public class MainController {
     }
 
     //Display items with their status for admin
+    //This is the admin view of all the items
     @RequestMapping("/itemsstatus")
     public String showItemsStatus(Model model)
     {        model.addAttribute("item",itemRepository.findAll());
@@ -98,14 +101,40 @@ public class MainController {
         model.addAttribute("item",itemRepository.findAll());
         return "itemsstatus";
     }
-    /*//Specific user items
-    @RequestMapping("/useritems/{id}")
-    public String showUserItems(@PathVariable("id") long id,Model model,User user,Item item)
+
+    //User items
+    @RequestMapping("/useritems")
+    public String showUserItems(Model model, Principal principal,User user,Item item)
     {
-        user=userRepository.findOne(id);
-        item=itemRepository.findByFound(true);
-       // item.setUser(user);
+/*
+        //user=userRepository.findByUsername(principal.getName());
+        //String userName=user.getUsername();
+        String userName=principal.getName();
+       item=itemRepository.findByFound(true);
+
+        System.out.println("The logged in user name: "+userName);
+        System.out.println("User name from item repo: "+item.getUname());
+        //item=user.getItems();
+        //user=userRepository.findOne(id);
+        //item=itemRepository.findByFound(true);
+        // item.setUser(user);
+
+
+        //model.addAttribute("item",item);
+        System.out.println(userName);
+        if(userName.equals(item.getUser().getUsername())) {
+            model.addAttribute("item", itemRepository.findByFound(true));
+        }
+        else{
+            return "redirect:/";
+        }*//*
+
+        //item=itemRepository.findByFound(true);
         model.addAttribute("item",item);
-       return "useritems";
-    }*/
+      */
+System.out.println(item.getUser().getUsername());
+        model.addAttribute("item",itemRepository.findAll());
+        return "useritems";
+    }
+
 }
