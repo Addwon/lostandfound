@@ -5,10 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.security.Principal;
@@ -136,4 +133,24 @@ public class MainController {
         return "useritems";
     }
 
+    //Admin reports missing user items
+    @GetMapping("/reportitems")
+    public String showReportItemsForm(Model model)
+    {
+        model.addAttribute("item",new Item());
+        model.addAttribute("user",userRepository.findAll());
+        //model.addAttribute("user",new User());
+        return "reportitems";
+    }
+    @PostMapping("/reportitems")
+    public String saveMovie(@ModelAttribute("item") Item item, BindingResult result, Model model)
+    {
+        if(result.hasErrors())
+        {
+            return "reportitems";
+        }
+        itemRepository.save(item);
+        userRepository.save(item.getUser());
+        return "redirect:/itemsstatus";
+    }
 }

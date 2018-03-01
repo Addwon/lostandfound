@@ -11,7 +11,7 @@
 <div class="container">
 
     <form action="#"
-          th:action="@{/additems}"
+          th:action="@{/reportitems}"
           th:object="${item}"
           method="post">
         <div class="col-3">
@@ -38,6 +38,12 @@
             <label id="labelItemDescription">Item description</label><br/>
             <textarea class="col-6" th:field="*{itemDescription}" rows="3" placeholder="Enter item description"></textarea>
             <span th:if="${#fields.hasErrors('itemDescription')}" th:errors="*{itemDescription}"></span>
+        </div>
+        <br/>
+        <div class="col-3">
+            <select multiple th:field="*{user}">
+                <option  th:each="user:${user}" th:value="${user.id}"  th:text="${user.firstName}"></option>
+            </select>
         </div>
         <br/>
         <div class="col-3">

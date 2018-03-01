@@ -20,7 +20,7 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/additems">Add items</a>
+                    <a class="nav-link" sec:authorize="hasAuthority('USER')"href="/additems">Add items</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" sec:authorize="hasAuthority('ADMIN')" href="/reportitems">Report items</a>
