@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.Collection;
@@ -152,5 +153,23 @@ public class MainController {
         itemRepository.save(item);
         userRepository.save(item.getUser());
         return "redirect:/itemsstatus";
+    }
+
+    //Search items
+
+    @GetMapping("/search")
+    public String getSearch()
+    {
+        return "index";
+    }
+
+    @PostMapping("/search")
+    public String showSearchResults(HttpServletRequest request, Model model)
+    {
+        String searchString = request.getParameter("search");
+        //model.addAttribute("item",itemRepository.findByItemTitleStartingWithOrItemTitleEndingWithOrItemTitleContainingIgnoreCase(searchString));
+       //model.addAttribute("item",itemRepository.findByItemTitleStartingWith(searchString));
+       model.addAttribute("item",itemRepository.findByItemTitleEndingWith(searchString));
+        return "index";
     }
 }
