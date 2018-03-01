@@ -20,8 +20,10 @@ public class Item {
     @Size(min=4)
     private String itemDescription;
 
+    private boolean found;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = true)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     public Item() {
@@ -32,6 +34,7 @@ public class Item {
         this.itemDescription = itemDescription;
         this.itemCatgory = itemCatgory;
         this.user = user;
+        this.found=found;
     }
 
     public long getId() {
@@ -72,5 +75,13 @@ public class Item {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public boolean isFound() {
+        return found;
+    }
+
+    public void setFound(boolean found) {
+        this.found = found;
     }
 }

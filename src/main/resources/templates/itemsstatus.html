@@ -31,6 +31,8 @@
             <th>Item catgory</th>
             <th>Item description</th>
             <th>Reported by</th>
+            <th>Item is found</th>
+            <th>Change status</th>
         </tr>
         </thead>
         <tbody>
@@ -45,7 +47,9 @@
 
             <td th:text="${item.user.firstName}"></td>
 
-            <!--<td><div><a sec:authorize="hasAuthority('ADMIN')" th:href="@{/remove/{id}(id=${item.id})}">Remove</a></div></td>-->
+            <td th:text="${item.found}"></td>
+
+            <td><div><a th:href="@{/change/{id}(id=${item.id})}">Change</a></div></td>
         </tr>
         </tbody>
     </table>

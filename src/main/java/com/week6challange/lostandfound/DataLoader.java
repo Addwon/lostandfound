@@ -46,6 +46,7 @@ public class DataLoader implements CommandLineRunner {
         item1.setItemTitle("Cell phone");
         item1.setItemCatgory("Other");
         item1.setItemDescription("iPhone 7, white color");
+        item1.setFound(false);
         item1.setUser(user2);
         //item1.setUname(user2.getFirstName());
         itemRepository.save(item1);
@@ -55,6 +56,7 @@ public class DataLoader implements CommandLineRunner {
         item2.setItemTitle("Jacket");
         item2.setItemCatgory("Clothes");
         item2.setItemDescription("Large size,red color");
+        item2.setFound(false);
         item2.setUser(user3);
         //item2.setUname(user3.getFirstName());
         itemRepository.save(item2);
@@ -64,6 +66,7 @@ public class DataLoader implements CommandLineRunner {
         item3.setItemTitle("Dog");
         item3.setItemCatgory("Pets");
         item3.setItemDescription("Brown bulldog");
+        item3.setFound(false);
         item3.setUser(user3);
         //item2.setUname(user3.getFirstName());
         itemRepository.save(item3);
@@ -73,6 +76,7 @@ public class DataLoader implements CommandLineRunner {
         item4.setItemTitle("Hat");
         item4.setItemCatgory("Clothes");
         item4.setItemDescription("Black fedora");
+        item4.setFound(false);
         item4.setUser(user2);
         //item2.setUname(user3.getFirstName());
         itemRepository.save(item4);

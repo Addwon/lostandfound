@@ -1,5 +1,7 @@
 package com.week6challange.lostandfound;
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
@@ -10,6 +12,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Email
     @Column(name="email",nullable=false)
     private String email;
 
