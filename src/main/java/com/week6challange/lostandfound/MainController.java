@@ -29,7 +29,10 @@ public class MainController {
 
     @RequestMapping("/")
     public String showIndex(Model model)
-    {        model.addAttribute("item",itemRepository.findAll());
+    {
+        //user=userRepository.findByUsername(principal.getName());
+        model.addAttribute("item",itemRepository.findAll());
+        //model.addAttribute("user",user);
         return "index";
     }
 
@@ -95,5 +98,14 @@ public class MainController {
         model.addAttribute("item",itemRepository.findAll());
         return "itemsstatus";
     }
-
+    /*//Specific user items
+    @RequestMapping("/useritems/{id}")
+    public String showUserItems(@PathVariable("id") long id,Model model,User user,Item item)
+    {
+        user=userRepository.findOne(id);
+        item=itemRepository.findByFound(true);
+       // item.setUser(user);
+        model.addAttribute("item",item);
+       return "useritems";
+    }*/
 }

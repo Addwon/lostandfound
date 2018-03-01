@@ -11,7 +11,6 @@
 </head>
 <body>
 <div th:replace="base :: navbar"></div>
-
 <!--<div id="site_content"></div>-->
 <div class="container">
     <div class="col-md-6 col-md-offset-3">
@@ -49,7 +48,14 @@
         </tr>
         </tbody>
     </table>
-</div>
+
+   <!-- <table>
+        <tr th:each="user : ${user}">
+            &lt;!&ndash;<td><a th:href="@{/privileges/{id}(id=${user.id})}">Grant</a></td>&ndash;&gt;
+            <td><a sec:authorize="hasAuthority('USER')" th:href="@{/useritems/{id}(id=${user.id})}">My items</a></td>
+        </tr>
+    </table>
+</div>-->
 <!--</div>-->
 <!--<div th:replace="base :: footer"></div>-->
 <script

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Items status</title>
+    <title>User items</title>
     <!--<link href="/css/stylesheet.css" rel="stylesheet"/>-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <!--<link href="/css/stylesheet.css" rel="stylesheet"/>-->
@@ -12,27 +12,17 @@
 <body>
 <div th:replace="base :: navbar"></div>
 
-<!--<div id="site_content"></div>-->
-<div class="container">
-    <div class="col-md-6 col-md-offset-3">
-        <form th:action="@{/search}" method="post">
-            <label>Search </label><span><input type="text" name="search" placeholder="Search items"/></span>
-        </form>
-    </div>
-</div>
 <div class="container">
     <table class="table" title="Items List" >
         <thead>
         <tr>
-            <td><b>Reported lost items</b></td>
+            <td><b>Found items</b></td>
         </tr>
         <tr>
             <th>Item title</th>
             <th>Item catgory</th>
             <th>Item description</th>
             <th>Reported by</th>
-            <th>Item is found</th>
-            <th>Change status</th>
         </tr>
         </thead>
         <tbody>
@@ -47,9 +37,7 @@
 
             <td th:text="${item.user.firstName}"></td>
 
-            <td th:text="${item.found}"></td>
-
-            <td><div><a th:href="@{/change/{id}(id=${item.id})}">Change</a></div></td>
+            <!--<td><div><a sec:authorize="hasAuthority('ADMIN')" th:href="@{/remove/{id}(id=${item.id})}">Remove</a></div></td>-->
         </tr>
         </tbody>
     </table>
