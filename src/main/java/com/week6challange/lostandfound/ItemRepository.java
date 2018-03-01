@@ -13,5 +13,7 @@ Item findByFound(boolean isfound);
 //List<Item>findByItemTitleStartingWithOrItemTitleEndingWithOrItemTitleContainingIgnoreCase(String string);
    //List<Item>  findByItemTitleStartingWith(String string);
    List<Item>  findByItemTitleEndingWith(String string);
+   List<Item> findByUser(User user);
+
 //    Item findByUserIn(Collection<User> users);
 }

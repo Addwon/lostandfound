@@ -100,37 +100,12 @@ public class MainController {
         return "itemsstatus";
     }
 
-    //User items
+    //Display found items for current user
     @RequestMapping("/useritems")
     public String showUserItems(Model model, Principal principal,User user,Item item)
     {
-/*
-        //user=userRepository.findByUsername(principal.getName());
-        //String userName=user.getUsername();
-        String userName=principal.getName();
-       item=itemRepository.findByFound(true);
-
-        System.out.println("The logged in user name: "+userName);
-        System.out.println("User name from item repo: "+item.getUname());
-        //item=user.getItems();
-        //user=userRepository.findOne(id);
-        //item=itemRepository.findByFound(true);
-        // item.setUser(user);
-
-
-        //model.addAttribute("item",item);
-        System.out.println(userName);
-        if(userName.equals(item.getUser().getUsername())) {
-            model.addAttribute("item", itemRepository.findByFound(true));
-        }
-        else{
-            return "redirect:/";
-        }*//*
-
-        //item=itemRepository.findByFound(true);
-        model.addAttribute("item",item);
-      */
-        model.addAttribute("item",itemRepository.findAll());
+        user=userRepository.findByUsername(principal.getName());
+        model.addAttribute("item",itemRepository.findByUser(user));
         return "useritems";
     }
 
