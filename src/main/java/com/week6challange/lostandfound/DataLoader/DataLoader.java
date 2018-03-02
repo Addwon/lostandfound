@@ -34,17 +34,14 @@ public class DataLoader implements CommandLineRunner {
 
         User user1=new User("admin@admin.com","password","Dave","Wolf",true,"Dave");
         user1.setRoles(Arrays.asList(adminRole));
-        //user1.setUserRole(adminRole.getRole());
         userRepository.save(user1);
 
         User user2=new User("user@user.com","password","Addis","Wondie",true,"Addis");
         user2.setRoles(Arrays.asList(userRole));
-        //user2.setUserRole(userRole.getRole());
         userRepository.save(user2);
 
         User user3 = new User("bob@bob.com", "password", "Bob", "Marley", true, "Bob");
         user3.setRoles(Arrays.asList(userRole));
-        //user3.setUserRole(userRole.getRole());
         userRepository.save(user3);
 
         //Item 1
@@ -66,7 +63,6 @@ public class DataLoader implements CommandLineRunner {
         item2.setFound(false);
         item2.setImgUrl("https://cdn.shopify.com/s/files/1/0312/6537/products/6785-PRX_1024x1024.jpeg?v=1476969075");
         item2.setUser(user3);
-        //item2.setUname(user3.getFirstName());
         itemRepository.save(item2);
 
         //Item 3
@@ -77,7 +73,6 @@ public class DataLoader implements CommandLineRunner {
         item3.setFound(false);
         item3.setImgUrl("https://www.dogbreedinfo.com/images22/ValleyBulldogPuppiesEnglishBulldogBoxerHybridLucy.jpg");
         item3.setUser(user3);
-        //item2.setUname(user3.getFirstName());
         itemRepository.save(item3);
 
         //Item 4
@@ -88,11 +83,6 @@ public class DataLoader implements CommandLineRunner {
         item4.setFound(false);
         item4.setImgUrl("https://images-na.ssl-images-amazon.com/images/I/61UQVDjpXRL._UX466_.jpg");
         item4.setUser(user2);
-        //item2.setUname(user3.getFirstName());
         itemRepository.save(item4);
-
-        /*user.getItems().add(item1);
-        user.getItems().add(item2);
-        userRepository.save(user);*/
     }
 }
