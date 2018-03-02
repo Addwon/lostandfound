@@ -2,6 +2,7 @@ package com.week6challange.lostandfound;
 
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -70,8 +71,13 @@ public class MainController {
         if(result.hasErrors()){
             return "additems";
         }else{
-            user=userRepository.findByUsername(principal.getName());
-            item.setUser(user);
+
+           user=userRepository.findByUsername(principal.getName());
+           Role role=roleRepository.findByUsers(user);
+           System.out.println("Role: "+role.getRole());
+           if(role.getRole().toString().equalsIgnoreCase("ADMIN"))
+               user.setFirstName("");
+               item.setUser(user);
             item.setFound(false);
             itemRepository.save(item);
         }
