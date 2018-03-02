@@ -44,15 +44,16 @@ public class MainController {
         return "registration";
     }
     @RequestMapping(value="/registration",method= RequestMethod.POST)
-    public String processRegistrationPage(@Valid @ModelAttribute("user") User user, Role role, BindingResult result){
+    public String processRegistrationPage(@Valid @ModelAttribute("user") User user, BindingResult result,Model model){
 
         if(result.hasErrors()){
             return "registration";
         }else{
             user.setEnabled(true);
             userRepository.save(user);
+            return "redirect:/";
         }
-        return "redirect:/";
+
     }
 
     //Report lost items

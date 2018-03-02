@@ -3,6 +3,7 @@ package com.week6challange.lostandfound.Model;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.HashSet;
 

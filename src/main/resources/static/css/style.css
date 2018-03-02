@@ -142,7 +142,7 @@ ul#menu li a
   font: normal 100% 'lucida sans unicode', arial, sans-serif;
   display: block; 
   float: left; 
-  height: 37px;
+  height: 72px;
   padding: 29px 26px 6px 26px;
   text-align: center;
   color: #FFF;
@@ -285,7 +285,7 @@ table
 { margin: 10px 0 30px 0;}
 
 table tr th, table tr td
-{ background: #3B3B3B;
+{ background: rgba(157, 185, 71, 0.93);
   color: #FFF;
   padding: 7px 4px;
   text-align: left;}
