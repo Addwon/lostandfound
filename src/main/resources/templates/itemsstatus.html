@@ -27,6 +27,7 @@
             <td><b>Reported lost items</b></td>
         </tr>
         <tr>
+            <th>Item image</th>
             <th>Item title</th>
             <th>Item catgory</th>
             <th>Item description</th>
@@ -38,6 +39,8 @@
         <tbody>
 
         <tr th:each="item : ${item}" th:if="${item.found == false}" >
+
+            <td><img class="img-rounded" th:src="${item.imgUrl}" alt="Item image" width="30px"/><br/></td>
 
             <td th:text="${item.itemTitle}"></td>
 
@@ -61,6 +64,7 @@
             <td><b>Found items</b></td>
         </tr>
         <tr>
+            <th>Item image</th>
             <th>Item title</th>
             <th>Item catgory</th>
             <th>Item description</th>
@@ -72,6 +76,8 @@
         <tbody>
 
         <tr th:each="item : ${item}" th:if="${item.isFound()}" >
+
+            <td><img class="img-rounded" th:src="${item.imgUrl}" alt="Item image" width="30px"/><br/></td>
 
             <td th:text="${item.itemTitle}"></td>
 

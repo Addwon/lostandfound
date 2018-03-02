@@ -26,6 +26,7 @@
             <td><b>Reported lost items</b></td>
         </tr>
         <tr>
+            <th>Item image</th>
             <th>Item title</th>
             <th>Item catgory</th>
             <th>Item description</th>
@@ -36,6 +37,12 @@
 
         <tr th:each="item : ${item}" >
 
+            <td><img class="img-rounded" th:src="${item.imgUrl}" alt="Item image" width="30px"/><br/></td>
+
+            <!--<div th:if="${item.imgUrl}!=null">
+                <img class="img-rounded" th:src="${item.imgUrl}"/>
+                <hr/>
+            </div>-->
             <td th:text="${item.itemTitle}"></td>
 
             <td th:text="${item.itemCatgory}"></td>

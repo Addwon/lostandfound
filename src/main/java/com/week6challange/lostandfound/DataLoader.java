@@ -47,6 +47,7 @@ public class DataLoader implements CommandLineRunner {
         item1.setItemCatgory("Other");
         item1.setItemDescription("iPhone 7, white color");
         item1.setFound(false);
+        item1.setImgUrl("http://www.freepngimg.com/download/iphone_7/5-2-iphone-png-picture-png.png");
         item1.setUser(user2);
         //item1.setUname(user2.getFirstName());
         itemRepository.save(item1);
@@ -57,6 +58,7 @@ public class DataLoader implements CommandLineRunner {
         item2.setItemCatgory("Clothes");
         item2.setItemDescription("Large size,red color");
         item2.setFound(false);
+        item2.setImgUrl("https://cdn.shopify.com/s/files/1/0312/6537/products/6785-PRX_1024x1024.jpeg?v=1476969075");
         item2.setUser(user3);
         //item2.setUname(user3.getFirstName());
         itemRepository.save(item2);
@@ -67,6 +69,7 @@ public class DataLoader implements CommandLineRunner {
         item3.setItemCatgory("Pets");
         item3.setItemDescription("Brown bulldog");
         item3.setFound(false);
+        item3.setImgUrl("https://thumbs.dreamstime.com/thumblarge_838/8383575.jpg");
         item3.setUser(user3);
         //item2.setUname(user3.getFirstName());
         itemRepository.save(item3);
@@ -77,6 +80,7 @@ public class DataLoader implements CommandLineRunner {
         item4.setItemCatgory("Clothes");
         item4.setItemDescription("Black fedora");
         item4.setFound(false);
+        item4.setImgUrl("https://images-na.ssl-images-amazon.com/images/I/61UQVDjpXRL._UX466_.jpg");
         item4.setUser(user2);
         //item2.setUname(user3.getFirstName());
         itemRepository.save(item4);

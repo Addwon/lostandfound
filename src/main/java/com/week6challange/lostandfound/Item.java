@@ -22,11 +22,11 @@ public class Item {
 
     private boolean found;
 
+    private String imgUrl;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
-    private String uname;
 
     public Item() {
     }
@@ -37,7 +37,7 @@ public class Item {
         this.itemCatgory = itemCatgory;
         this.user = user;
         this.found=found;
-        this.uname=user.getUsername();
+        this.imgUrl=imgUrl;
     }
 
     public long getId() {
@@ -88,11 +88,11 @@ public class Item {
         this.found = found;
     }
 
-    public String getUname() {
-        return uname;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }
