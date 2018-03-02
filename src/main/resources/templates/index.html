@@ -10,10 +10,30 @@
 <body>
 <div th:replace="base :: header"></div>
 <div id="site_content">
+    <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <h3>Lost items</h3>
+        <a th:href="@{/findby/{category}(category='clothes')}"><h4>Clothes</h4></a>
+        <a th:href="@{/findby/{category}(category='clothes')}"><img class="img-rounded" src="/images/clothing.jpeg" alt="Cloth image" width="80px"/></a>
+        <p>Display list of missing clothes</p>
+        <a th:href="@{/findby/{category}(category='pets')}"><h4>Pets</h4></a>
+        <a th:href="@{/findby/{category}(category='pets')}"><img class="img-rounded" src="/images/pets.jpg" alt="Cloth image" width="80px"/></a>
+        <p>Here are the list of missing pets </p>
+        <a th:href="@{/findby/{category}(category='other')}"><h4>Other</h4></a>
+        <a th:href="@{/findby/{category}(category='other')}"><img class="img-rounded" src="/images/other.jpg" alt="Cloth image" width="80px"/></a>
+        <p>Other items reported missing</p>
+
+    </div>
+
+<div id="content">
 <div class="container">
     <div class="col-md-6 col-md-offset-3">
         <form th:action="@{/search}" method="post">
-            <label>Search </label><span><input type="text" name="search" placeholder="Search items"/></span>
+
+                <label>Search </label><span><input class="search" type="text" name="search_field" placeholder="Search items"/></span>
+                <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="/css/search.png" alt="Search" title="Search" />
+
+
         </form>
     </div>
 </div>
@@ -21,7 +41,9 @@
     <table class="table" title="Items List" >
         <thead>
         <tr>
-            <td><b>Reported lost items</b></td>
+            <td colspan=5>
+            <b>Reported Lost items</b>
+            </td>
         </tr>
         <tr>
             <th>Item image</th>
@@ -47,6 +69,7 @@
         </tr>
         </tbody>
     </table>
+</div>
 </div>
 </div>
 <script

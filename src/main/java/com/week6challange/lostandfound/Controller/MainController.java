@@ -138,6 +138,13 @@ public class MainController {
         return "redirect:/itemsstatus";
     }
 
+    //Display items by category
+    @RequestMapping("/findby/{category}")
+    public String changeItemsStatus(@PathVariable("category") String category, Model model, Item item)
+    {
+        model.addAttribute("item",itemRepository.findByItemCatgoryContains(category));
+        return "index";
+    }
     //Search items
 
     @GetMapping("/search")

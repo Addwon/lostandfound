@@ -58,7 +58,7 @@ public class DataLoader implements CommandLineRunner {
         //Item 2
         Item item2=new Item();
         item2.setItemTitle("Jacket");
-        item2.setItemCatgory("Clothes");
+        item2.setItemCatgory("clothes");
         item2.setItemDescription("Large size,red color");
         item2.setFound(false);
         item2.setImgUrl("https://cdn.shopify.com/s/files/1/0312/6537/products/6785-PRX_1024x1024.jpeg?v=1476969075");
@@ -84,5 +84,15 @@ public class DataLoader implements CommandLineRunner {
         item4.setImgUrl("https://images-na.ssl-images-amazon.com/images/I/61UQVDjpXRL._UX466_.jpg");
         item4.setUser(user2);
         itemRepository.save(item4);
+
+        //Item 5
+        Item item5=new Item();
+        item5.setItemTitle("Wallet");
+        item5.setItemCatgory("other");
+        item5.setItemDescription("Brown wallet with credit cards and driving licence");
+        item5.setFound(false);
+        item5.setImgUrl("https://i.pinimg.com/736x/52/34/7a/52347a1b23e3cababcc547e9b559e03f--brown-leather-wallet-leather-men.jpg");
+        item5.setUser(user3);
+        itemRepository.save(item5);
     }
 }

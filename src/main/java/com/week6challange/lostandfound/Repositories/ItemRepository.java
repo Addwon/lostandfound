@@ -12,4 +12,5 @@ Item findByFound(boolean isfound);
    //List<Item>  findByItemTitleEndingWith(String string);
    List<Item> findByUser(User user);
    List<Item>findByItemTitleContainsOrItemCatgoryContains(String title,String category);
+   List<Item>findByItemCatgoryContains(String category);
 }
