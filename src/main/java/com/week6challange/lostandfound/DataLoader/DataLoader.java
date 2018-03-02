@@ -1,4 +1,10 @@
-package com.week6challange.lostandfound;
+package com.week6challange.lostandfound.DataLoader;
+import com.week6challange.lostandfound.Model.Item;
+import com.week6challange.lostandfound.Model.Role;
+import com.week6challange.lostandfound.Model.User;
+import com.week6challange.lostandfound.Repositories.ItemRepository;
+import com.week6challange.lostandfound.Repositories.RoleRepository;
+import com.week6challange.lostandfound.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

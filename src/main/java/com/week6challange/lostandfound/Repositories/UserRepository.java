@@ -1,5 +1,6 @@
-package com.week6challange.lostandfound;
+package com.week6challange.lostandfound.Repositories;
 
+import com.week6challange.lostandfound.Model.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User,Long> {

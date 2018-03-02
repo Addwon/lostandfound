@@ -1,4 +1,4 @@
-package com.week6challange.lostandfound;
+package com.week6challange.lostandfound.Model;
 
 import org.hibernate.validator.constraints.Email;
 
