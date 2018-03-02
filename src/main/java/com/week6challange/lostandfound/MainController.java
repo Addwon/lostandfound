@@ -74,11 +74,18 @@ public class MainController {
 
            user=userRepository.findByUsername(principal.getName());
            Role role=roleRepository.findByUsers(user);
+
            System.out.println("Role: "+role.getRole());
+
            if(role.getRole().toString().equalsIgnoreCase("ADMIN"))
                user.setFirstName("");
-               item.setUser(user);
-            item.setFound(false);
+
+           item.setUser(user);
+           item.setFound(false);
+
+            if(item.getImgUrl().isEmpty()){
+                item.setImgUrl("http://cdn2.sportngin.com/attachments/photo/2122/4060/70_medium.jpg");
+            }
             itemRepository.save(item);
         }
         return "redirect:/";

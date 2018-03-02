@@ -44,10 +44,10 @@ public class DataLoader implements CommandLineRunner {
         //Item 1
         Item item1=new Item();
         item1.setItemTitle("Cell phone");
-        item1.setItemCatgory("Other");
+        item1.setItemCatgory("other");
         item1.setItemDescription("iPhone 7, white color");
         item1.setFound(false);
-        item1.setImgUrl("http://www.freepngimg.com/download/iphone_7/5-2-iphone-png-picture-png.png");
+        item1.setImgUrl("https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP743/iphone7-gold.png");
         item1.setUser(user2);
         //item1.setUname(user2.getFirstName());
         itemRepository.save(item1);
@@ -65,11 +65,11 @@ public class DataLoader implements CommandLineRunner {
 
         //Item 3
         Item item3=new Item();
-        item3.setItemTitle("Dog");
+        item3.setItemTitle("dog");
         item3.setItemCatgory("Pets");
         item3.setItemDescription("Brown bulldog");
         item3.setFound(false);
-        item3.setImgUrl("https://thumbs.dreamstime.com/thumblarge_838/8383575.jpg");
+        item3.setImgUrl("https://www.dogbreedinfo.com/images22/ValleyBulldogPuppiesEnglishBulldogBoxerHybridLucy.jpg");
         item3.setUser(user3);
         //item2.setUname(user3.getFirstName());
         itemRepository.save(item3);
@@ -77,7 +77,7 @@ public class DataLoader implements CommandLineRunner {
         //Item 4
         Item item4=new Item();
         item4.setItemTitle("Hat");
-        item4.setItemCatgory("Clothes");
+        item4.setItemCatgory("clothes");
         item4.setItemDescription("Black fedora");
         item4.setFound(false);
         item4.setImgUrl("https://images-na.ssl-images-amazon.com/images/I/61UQVDjpXRL._UX466_.jpg");

@@ -22,7 +22,7 @@
         </div>
         <div class="col-3">
             <label id="labelItemTitle">Item title</label>
-            <input type="text" class="form-control" id="textItemName" th:field="*{itemTitle}" placeholder="Enter item title"/>
+            <input type="text" class="form-control" th:field="*{itemTitle}" placeholder="Enter item title"/>
             <span th:if="${#fields.hasErrors('itemTitle')}" th:errors="*{itemTitle}"></span>
         </div><br/>
         <div class="col-3">
@@ -30,7 +30,7 @@
             <Select th:field="*{itemCatgory}">
                 <option value="clothes" >Clothes</option>
                 <option value="pets" >Pets</option>
-                <option value="Other" >Other</option>
+                <option value="other" >Other</option>
             </Select>
             <span th:if="${#fields.hasErrors('itemCatgory')}" th:errors="*{itemCatgory}"></span>
         </div><br/>
@@ -40,6 +40,11 @@
             <span th:if="${#fields.hasErrors('itemDescription')}" th:errors="*{itemDescription}"></span>
         </div>
         <br/>
+        <div class="col-3">
+            <label id="labelImageUrl">Image url</label>
+            <input type="text" class="form-control" th:field="*{imgUrl}" placeholder="Enter image url"/>
+            <span th:if="${#fields.hasErrors('imgUrl')}" th:errors="*{imgUrl}"></span>
+        </div><br/>
         <div class="col-3">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
