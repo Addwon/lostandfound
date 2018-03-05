@@ -87,6 +87,13 @@ public class MainController {
             if(item.getImgUrl().isEmpty()){
                 item.setImgUrl("http://cdn2.sportngin.com/attachments/photo/2122/4060/70_medium.jpg");
             }
+            Mail mail=new Mail();
+            mail.setTo("admin@lostandfound.com");
+            mail.setSubject("Lost item");
+            mail.setContent(user.getFirstName()+ "has lost" +item.getItemTitle());
+            mail.setFrom(item.getUser().getEmail());
+            //release the ff to send msg with the correct app.proporties configuration
+            //emailService.sendSimpleMessage(mail);
             itemRepository.save(item);
         }
         return "redirect:/";
