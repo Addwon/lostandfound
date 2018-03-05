@@ -105,6 +105,14 @@ public class MainController {
         item=itemRepository.findOne(id);
         if(!item.isFound()){
             item.setFound(true);
+            //Testing email
+            Mail mail=new Mail();
+            mail.setTo(item.getUser().getEmail());
+            mail.setSubject("Item status");
+            mail.setContent("Your lost item has been found");
+            mail.setFrom("info@lostandfound.com");
+            System.out.println("Sending email to "+item.getUser().getEmail());
+            //emailService.sendSimpleMessage(mail);
         }
         else{
             item.setFound(false);
