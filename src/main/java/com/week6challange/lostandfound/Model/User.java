@@ -15,7 +15,7 @@ public class User {
     private long id;
 
     @Email
-    @Column(name="email",nullable=false)
+    @Column(name="email")
     @NotEmpty(message = "Enter Email")
     private String email;
 

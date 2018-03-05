@@ -62,7 +62,7 @@ public class MainController {
         return "additems";
     }
     @RequestMapping(value="/additems",method= RequestMethod.POST)
-    public String processAddItemsPage(@Valid @ModelAttribute("item") Item item, User user, Principal principal, BindingResult result){
+    public String processAddItemsPage(@Valid @ModelAttribute("item") Item item,BindingResult result,Model model, User user, Principal principal){
 
         if(result.hasErrors()){
             return "additems";
@@ -132,9 +132,11 @@ public class MainController {
         if(result.hasErrors())
         {
             return "reportitems";
+        }else{
+            itemRepository.save(item);
+            userRepository.save(item.getUser());
         }
-        itemRepository.save(item);
-        userRepository.save(item.getUser());
+
         return "redirect:/itemsstatus";
     }
 

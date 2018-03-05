@@ -1,5 +1,7 @@
 package com.week6challange.lostandfound.Model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -10,11 +12,9 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @NotNull
-    @Size(min=2)
+    @NotEmpty(message = "Enter item title")
     private String itemTitle;
 
-    @NotNull
     private String itemCatgory;
 
     @Size(min=4)
