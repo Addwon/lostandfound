@@ -1,6 +1,7 @@
 package com.week6challange.lostandfound.Model;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -15,21 +16,26 @@ public class User {
 
     @Email
     @Column(name="email",nullable=false)
+    @NotEmpty(message = "Enter Email")
     private String email;
 
     @Column(name="password")
+    @NotEmpty(message = "Enter Password")
     private String password;
 
     @Column(name="first_name")
+    @NotEmpty(message = "Enter First name")
     private String firstName;
 
     @Column(name="last_name")
+    @NotEmpty(message = "Enter last name")
     private String lastName;
 
     @Column(name="enabled")
     private boolean enabled;
 
     @Column(name="username")
+    @NotEmpty(message = "Enter User name")
     private String username;
 
     @ManyToMany(fetch=FetchType.EAGER)

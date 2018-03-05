@@ -24,6 +24,7 @@ public class Item {
 
     private String imgUrl;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = true)
     private User user;
@@ -38,6 +39,7 @@ public class Item {
         this.user = user;
         this.found=found;
         this.imgUrl=imgUrl;
+
     }
 
     public long getId() {
@@ -95,4 +97,5 @@ public class Item {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
+
 }

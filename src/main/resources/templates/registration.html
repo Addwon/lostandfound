@@ -16,7 +16,6 @@
 
     <form autocomplete="off" action="#" th:action="@{/registration}" th:object="${user}" method="post">
         <div class="form_settings">
-
             <p><span>First Name</span><input class="contact" type="text" placeholder="First Name" th:field="*{firstName}" /></p>
             <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name Error</span><br />
 
