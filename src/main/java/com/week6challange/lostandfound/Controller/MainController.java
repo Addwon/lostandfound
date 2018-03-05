@@ -108,10 +108,12 @@ public class MainController {
             //Testing email
             Mail mail=new Mail();
             mail.setTo(item.getUser().getEmail());
+            //mail.setTo("addwon@gmail.com");
             mail.setSubject("Item status");
             mail.setContent("Your lost item has been found");
             mail.setFrom("info@lostandfound.com");
             System.out.println("Sending email to "+item.getUser().getEmail());
+            //release the ff to send msg with the correct app.proporties configuration
             //emailService.sendSimpleMessage(mail);
         }
         else{
