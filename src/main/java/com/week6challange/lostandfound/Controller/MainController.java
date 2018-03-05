@@ -1,5 +1,6 @@
 package com.week6challange.lostandfound.Controller;
 
+import com.week6challange.lostandfound.Configuration.EmailService;
 import com.week6challange.lostandfound.Model.Item;
 import com.week6challange.lostandfound.Model.Role;
 import com.week6challange.lostandfound.Model.User;
@@ -9,12 +10,14 @@ import com.week6challange.lostandfound.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import com.week6challange.lostandfound.Model.Mail;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.security.Principal;
+
 
 @Controller
 public class MainController {
@@ -27,16 +30,18 @@ public class MainController {
     @Autowired
     ItemRepository itemRepository;
 
+    @Autowired
+    private EmailService emailService;
+
     @RequestMapping("/login")
     public String login(){return "login";}
 
     @RequestMapping("/")
     public String showIndex(Model model)
     {
-        model.addAttribute("item",itemRepository.findAll());
-        return "index";
+     model.addAttribute("item",itemRepository.findAll());
+     return "index";
     }
-
     //User registration
     @RequestMapping(value="/registration",method= RequestMethod.GET)
     public String showRegistrationPage(Model model){
@@ -162,4 +167,6 @@ public class MainController {
        model.addAttribute("item",itemRepository.findByItemTitleContainsOrItemCatgoryContains(searchString,searchString));
         return "index";
     }
+
+
 }

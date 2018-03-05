@@ -1,5 +1,7 @@
 package com.week6challange.lostandfound.DataLoader;
+import com.week6challange.lostandfound.Configuration.EmailService;
 import com.week6challange.lostandfound.Model.Item;
+import com.week6challange.lostandfound.Model.Mail;
 import com.week6challange.lostandfound.Model.Role;
 import com.week6challange.lostandfound.Model.User;
 import com.week6challange.lostandfound.Repositories.ItemRepository;
@@ -10,6 +12,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -22,6 +26,17 @@ public class DataLoader implements CommandLineRunner {
 
     @Autowired
     ItemRepository itemRepository;
+ //Mail
+ //private static Logger log = LoggerFactory.getLogger(Application.class);
+
+// @Autowired
+// private EmailService emailService;
+
+/*
+ public static void main(String[] args) throws Exception {
+  SpringApplication.run(Application.class, args);
+ }
+*/
 
     @Override
     public void run(String... strings) throws Exception{
@@ -94,5 +109,15 @@ public class DataLoader implements CommandLineRunner {
         item5.setImgUrl("https://i.pinimg.com/736x/52/34/7a/52347a1b23e3cababcc547e9b559e03f--brown-leather-wallet-leather-men.jpg");
         item5.setUser(user3);
         itemRepository.save(item5);
+
+    /* //log.info("Spring Mail - Sending Simple Email with JavaMailSender Example");
+     System.out.println("Sending email...");
+     Mail mail = new Mail();
+     mail.setFrom("no-reply@memorynotfound.com");
+     mail.setTo("addwon@gmail.com");
+     mail.setSubject("Sending Simple Email with JavaMailSender Example");
+     mail.setContent("This tutorial demonstrates how to send a simple email using Spring Framework.");
+
+     emailService.sendSimpleMessage(mail);*/
     }
 }
